@@ -509,9 +509,6 @@ Architect.prototype.registerPlugin = function(plugin, next) {
             }
             services[name] = provided[name];
 
-            if (typeof provided[name] != "function")
-                provided[name].name = name;
-
             app.emit("service", name, services[name]);
         });
         if (provided && provided.hasOwnProperty("onDestroy")) {
